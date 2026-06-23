@@ -1,5 +1,5 @@
 resource_group_name                 = "rg-azure-platform-lab-dev"
-location                            = "uksouth"
+location                            = "centralus"
 virtual_network_name                = "vnet-platform-lab-dev"
 virtual_network_address_space       = ["10.10.0.0/16"]
 vm_subnet_name                      = "snet-vm-dev"
@@ -8,7 +8,7 @@ vm_network_security_group_name      = "nsg-vm-dev"
 admin_source_cidr                   = "151.226.76.119/32"
 virtual_machine_name                = "vm-platform-lab-dev"
 virtual_machine_computer_name       = "vmlabdev"
-virtual_machine_size                = "Standard_D2s_v5"
+virtual_machine_size                = "Standard_D2s_v3"
 virtual_machine_admin_username      = "azureadmin"
 virtual_machine_ssh_public_key_path = "~/.ssh/azure-platform-lab.pub"
 

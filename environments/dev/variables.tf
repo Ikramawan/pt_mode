@@ -6,7 +6,7 @@ variable "resource_group_name" {
 variable "location" {
   description = "Azure region used for the dev environment."
   type        = string
-  default     = "uksouth"
+  default     = "centralus"
 }
 
 variable "tags" {
