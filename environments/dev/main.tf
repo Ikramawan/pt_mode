@@ -18,6 +18,8 @@ module "network" {
   network_security_group_name = var.vm_network_security_group_name
   admin_source_cidr           = var.admin_source_cidr
   tags                        = var.tags
+  aks_subnet_name             = var.aks_subnet_name
+  aks_subnet_address_prefixes = var.aks_subnet_address_prefixes
 }
 
 module "linux_vm" {
@@ -42,3 +44,23 @@ module "linux_vm" {
 
   tags = var.tags
 }
+
+module "container_registry" {
+  source = "../../modules/container-registry"
+
+  name                = var.container_registry_name
+  resource_group_name = module.resource_group.name
+  location            = module.resource_group.location
+  sku                 = var.container_registry_sku
+  tags                = var.tags
+}
+
+module "monitoring" {
+  source = "../../modules/monitoring"
+
+  name                = var.log_analytics_workspace_name
+  resource_group_name = module.resource_group.name
+  location            = module.resource_group.location
+  retention_in_days   = var.log_analytics_retention_days
+  tags                = var.tags
+} 

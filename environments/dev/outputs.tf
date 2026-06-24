@@ -47,3 +47,13 @@ output "virtual_machine_data_disk_id" {
   description = "ID of the development VM data disk."
   value       = module.linux_vm.data_disk_id
 }
+
+output "container_registry_login_server" {
+  description = "Login server for the Azure Container Registry."
+  value       = module.container_registry.login_server
+}
+
+output "log_analytics_workspace_id" {
+  description = "ID of the Log Analytics workspace."
+  value       = module.monitoring.id
+}

@@ -18,3 +18,10 @@ virtual_machine_public_ip_name         = "pip-platform-lab-dev"
 virtual_machine_os_disk_name      = "osdisk-platform-lab-dev"
 virtual_machine_data_disk_name    = "datadisk-platform-lab-dev"
 virtual_machine_data_disk_size_gb = 32
+aks_subnet_name                   = "snet-aks-dev"
+aks_subnet_address_prefixes       = ["10.10.2.0/24"]
+
+container_registry_name      = "acrikramplatformlabdev"
+container_registry_sku       = "Basic"
+log_analytics_workspace_name = "log-aks-platform-lab-dev"
+log_analytics_retention_days = 30

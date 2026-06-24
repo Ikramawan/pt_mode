@@ -13,6 +13,13 @@ resource "azurerm_subnet" "vm" {
   address_prefixes     = var.subnet_address_prefixes
 }
 
+resource "azurerm_subnet" "aks" {
+  name                 = var.aks_subnet_name
+  resource_group_name  = var.resource_group_name
+  virtual_network_name = azurerm_virtual_network.this.name
+  address_prefixes     = var.aks_subnet_address_prefixes
+}
+
 resource "azurerm_network_security_group" "vm" {
   name                = var.network_security_group_name
   resource_group_name = var.resource_group_name

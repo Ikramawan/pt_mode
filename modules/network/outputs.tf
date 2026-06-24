@@ -17,3 +17,8 @@ output "network_security_group_id" {
   description = "ID of the VM network security group."
   value       = azurerm_network_security_group.vm.id
 }
+
+output "aks_subnet_id" {
+  description = "ID of the subnet used by AKS node pools."
+  value       = azurerm_subnet.aks.id
+}

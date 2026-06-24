@@ -48,3 +48,17 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+variable "aks_subnet_name" {
+  description = "Name of the subnet used by AKS node pools."
+  type        = string
+}
+
+variable "aks_subnet_address_prefixes" {
+  description = "Address prefixes assigned to the AKS node subnet."
+  type        = list(string)
+
+  validation {
+    condition     = length(var.aks_subnet_address_prefixes) > 0
+    error_message = "At least one AKS subnet address prefix must be provided."
+  }
+}

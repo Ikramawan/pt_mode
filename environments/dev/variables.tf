@@ -100,3 +100,35 @@ variable "virtual_machine_data_disk_size_gb" {
   type        = number
   default     = 32
 }
+
+variable "aks_subnet_name" {
+  description = "Name of the AKS node subnet."
+  type        = string
+}
+
+variable "aks_subnet_address_prefixes" {
+  description = "Address prefixes for the AKS node subnet."
+  type        = list(string)
+}
+
+variable "container_registry_name" {
+  description = "Globally unique Azure Container Registry name."
+  type        = string
+}
+
+variable "container_registry_sku" {
+  description = "Azure Container Registry SKU."
+  type        = string
+  default     = "Basic"
+}
+
+variable "log_analytics_workspace_name" {
+  description = "Name of the Log Analytics workspace."
+  type        = string
+}
+
+variable "log_analytics_retention_days" {
+  description = "Log Analytics retention period in days."
+  type        = number
+  default     = 30
+}
