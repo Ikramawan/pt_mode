@@ -63,4 +63,32 @@ module "monitoring" {
   location            = module.resource_group.location
   retention_in_days   = var.log_analytics_retention_days
   tags                = var.tags
-} 
+}
+
+module "aks" {
+  source = "../../modules/aks"
+
+  name                = var.aks_cluster_name
+  dns_prefix          = var.aks_dns_prefix
+  resource_group_name = module.resource_group.name
+  location            = module.resource_group.location
+  kubernetes_version  = var.aks_kubernetes_version
+
+  subnet_id                  = module.network.aks_subnet_id
+  container_registry_id      = module.container_registry.id
+  log_analytics_workspace_id = module.monitoring.id
+
+  system_node_vm_size   = var.aks_system_node_vm_size
+  system_node_min_count = var.aks_system_node_min_count
+  system_node_max_count = var.aks_system_node_max_count
+
+  user_node_vm_size   = var.aks_user_node_vm_size
+  user_node_min_count = var.aks_user_node_min_count
+  user_node_max_count = var.aks_user_node_max_count
+
+  pod_cidr       = var.aks_pod_cidr
+  service_cidr   = var.aks_service_cidr
+  dns_service_ip = var.aks_dns_service_ip
+
+  tags = var.tags
+}

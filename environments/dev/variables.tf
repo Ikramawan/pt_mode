@@ -132,3 +132,73 @@ variable "log_analytics_retention_days" {
   type        = number
   default     = 30
 }
+
+variable "aks_cluster_name" {
+  description = "Name of the AKS cluster."
+  type        = string
+}
+
+variable "aks_dns_prefix" {
+  description = "DNS prefix for the AKS API server."
+  type        = string
+}
+
+variable "aks_kubernetes_version" {
+  description = "Kubernetes version used by AKS."
+  type        = string
+  default     = "1.35.5"
+}
+
+variable "aks_system_node_vm_size" {
+  description = "VM size for the AKS system node pool."
+  type        = string
+  default     = "Standard_D2s_v3"
+}
+
+variable "aks_system_node_min_count" {
+  description = "Minimum system node count."
+  type        = number
+  default     = 1
+}
+
+variable "aks_system_node_max_count" {
+  description = "Maximum system node count."
+  type        = number
+  default     = 2
+}
+
+variable "aks_user_node_vm_size" {
+  description = "VM size for the AKS user node pool."
+  type        = string
+  default     = "Standard_D2s_v3"
+}
+
+variable "aks_user_node_min_count" {
+  description = "Minimum user node count."
+  type        = number
+  default     = 1
+}
+
+variable "aks_user_node_max_count" {
+  description = "Maximum user node count."
+  type        = number
+  default     = 2
+}
+
+variable "aks_pod_cidr" {
+  description = "Pod CIDR for Azure CNI Overlay."
+  type        = string
+  default     = "10.244.0.0/16"
+}
+
+variable "aks_service_cidr" {
+  description = "Kubernetes service CIDR."
+  type        = string
+  default     = "10.0.0.0/16"
+}
+
+variable "aks_dns_service_ip" {
+  description = "Kubernetes DNS service IP."
+  type        = string
+  default     = "10.0.0.10"
+}

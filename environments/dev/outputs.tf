@@ -57,3 +57,18 @@ output "log_analytics_workspace_id" {
   description = "ID of the Log Analytics workspace."
   value       = module.monitoring.id
 }
+
+output "aks_cluster_name" {
+  description = "Name of the AKS cluster."
+  value       = module.aks.name
+}
+
+output "aks_oidc_issuer_url" {
+  description = "OIDC issuer URL for AKS Workload Identity."
+  value       = module.aks.oidc_issuer_url
+}
+
+output "aks_kubelet_identity_object_id" {
+  description = "Object ID of the AKS kubelet identity."
+  value       = module.aks.kubelet_identity_object_id
+}

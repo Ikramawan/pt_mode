@@ -25,3 +25,18 @@ container_registry_name      = "acrikramplatformlabdev"
 container_registry_sku       = "Basic"
 log_analytics_workspace_name = "log-aks-platform-lab-dev"
 log_analytics_retention_days = 30
+aks_cluster_name             = "aks-platform-lab-dev"
+aks_dns_prefix               = "aks-platform-lab-dev"
+aks_kubernetes_version       = "1.35.5"
+
+aks_system_node_vm_size   = "Standard_D2s_v3"
+aks_system_node_min_count = 1
+aks_system_node_max_count = 2
+
+aks_user_node_vm_size   = "Standard_D2s_v3"
+aks_user_node_min_count = 1
+aks_user_node_max_count = 2
+
+aks_pod_cidr       = "10.244.0.0/16"
+aks_service_cidr   = "10.0.0.0/16"
+aks_dns_service_ip = "10.0.0.10"
